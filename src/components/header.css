@@ -3,6 +3,17 @@
     width: 100%;
     padding: 50px 0;
     z-index: 100;
+
+    /* Animation */
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.HeaderScrolled{
+    background-color: rgba(0,0,0,0.8);
+    padding: 15px 0;
+
+    /* Blur Effect: Safari ONLY */
+    backdrop-filter: blur(20px);
 }
 
 .HeaderGroup {
@@ -62,4 +73,3 @@
         display: none;
     }
 }
-
