@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Wave from "../components/wave"
 
 const SectionGroup = styled.div`
     background: url(${props => props.image});
@@ -8,6 +9,12 @@ const SectionGroup = styled.div`
     display: grid;
     grid-template-rows: 300px auto;
     grid-gap: 20px;
+
+    position: relative;
+
+    @media (max-width: 640px) {
+        height: 820px;
+    }
 `
 
 const SectionLogo = styled.img`
@@ -49,8 +56,30 @@ const SectionText = styled.p`
     }
 `
 
+const WaveTop = styled.div`
+    position: absolute;
+    width: 100%;
+    top: -6px;
+    transform: rotate(180deg);
+`
+
+const WaveBottom = styled.div`
+    position: absolute;
+    width: 100%;
+    bottom: -6px;
+`
+
 const Section = props => (
     <SectionGroup image={props.image}>
+
+        <WaveTop>
+            <Wave />
+        </WaveTop>
+
+        <WaveBottom>
+            <Wave />
+        </WaveBottom>
+
         <SectionLogo src={props.logo} />
         <SectionTitleGroup>
             <SectionTitle>{props.title}</SectionTitle>
